@@ -1,3 +1,6 @@
+<?php
+include 'Application.php'
+?>
 <!doctype html>
 <html lang="en">
 <head>
@@ -8,17 +11,6 @@
     <title>Document</title>
 </head>
 <body>
-<?php
-    include 'Persons.php';
-//    $person1 = new Persons();
-//    $person1->age = 15;
-//    echo $person1->group;
-    echo Persons::getGroup();
 
-
-
-
-
-?>
 </body>
 </html>

@@ -1,27 +1,45 @@
 <?php
+//
+//
+//class Application
+//{
+//        private static $instance;
+//
+//        public function __construct(){
+//
+//        }
+//
+//        public static function getInstance(){
+//            if (self::$instance === null){
+//                self::$instance = new Application();
+//                echo 'hallo';
+//            }
+//            return self::$instance;
+//        }
+//}
+//
+//$app1 = Application::getInstance();
+//$app2 = Application::getInstance();
+//$app3 = new Application();
 
 class Application{
-    private $name;
-    public static $count = 0;
+    private static $instance;
 
-    public function __construct($_name)
-    {
-        $this->name = $_name;
-        self::$count++;
+    public function __construct(){
+
     }
 
-    public function __toString()
-    {
-        return $this->name;
+    public static function getInstance(){
+        if(self::$instance === null){
+            self::$instance = new Application();
+            echo 'Hallo';
+        }
+        return self::$instance;
     }
 
 }
-
-echo 'The number of application is'. Application::$count.'<br/>';
-$app1 = new Application('App1');
-echo 'The number of application is'. Application::$count.'<br/>';
-$app2 = new Application('App2');
-echo 'The number of application is'. Application::$count.'<br/>';
-
-echo $app1;
-echo $app2;
+//$app1 = Application::getInstance();
+//
+//$app2 = Application::getInstance();
+$app1 = new Application();
+Application::getInstance();
