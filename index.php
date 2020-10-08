@@ -1,16 +1,30 @@
 <?php
-include 'Application.php'
-?>
-<!doctype html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-</head>
-<body>
+//include_once "Product.php";
+//include_once "ProductManager.php";
+//
+//use Services\ProductManager;
+//use Models\Product;
+//
+//$productManager = new ProductManager();
+//$productManager -> add(new Product("laptop"));
+//$productManager ->add(new Product("Mobile"));
+//
+//$products = $productManager->getProduct();
+//    foreach ($products as $product){
+//        echo $product ->getName()."<br/>";
+//    }
 
-</body>
-</html>
+include_once "Product.php";
+include_once "ProductManager.php";
+
+use Services\ProductManager;
+use Models\Product;
+
+$productManager = new ProductManager();
+$productManager->add(new Product('laptop',1000));
+$productManager->add(new Product('mobile',2000));
+
+$products = $productManager->getProduct();
+        foreach ($products as $product){
+            echo $product->getName()."<br/>";
+        }
